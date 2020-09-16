@@ -129,10 +129,10 @@ PNG illinify(PNG image) {
       // which means you're changing the image directly. No need to `set`
       // the pixel since you're directly changing the memory of the image.
       if (pixel.h > ((11+216)/2)){
-        pixel.h = 11;
+        pixel.h = 216;
       }
       else{
-        pixel.h = 216;
+        pixel.h = 11;
       }
     }
   }
