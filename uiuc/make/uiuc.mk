@@ -23,7 +23,7 @@ CXX_WHICH = $(CXX_GNU)
 CXX = $(CXX_WHICH)
 LD = $(CXX_WHICH)
 # STDVERSION = -std=c++1y # deprecated nomenclature
-STDVERSION = -std=c++14 # proper but requires newer compiler versions (for better or worse)
+STDVERSION = -std=gnu++0x # proper but requires newer compiler versions (for better or worse)
 STDLIBVERSION_CLANG = -stdlib=libc++ # Clang's version; not present on default AWS Cloud9 instance
 STDLIBVERSION_GNU =   # blank on purpose; default GNU library
 STDLIBVERSION = $(STDLIBVERSION_GNU)

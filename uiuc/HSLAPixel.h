@@ -20,7 +20,5 @@ namespace uiuc {
       double s;
       double l;
       double a;
-  }
-
-
+  };
 }
