@@ -95,7 +95,7 @@ PNG createSpotlight(PNG image, int centerX, int centerY) {
       }
       else{
         pixel.l *= (1 - percentage_decrease);
-      }
+      }}}
       
 
   return image;
