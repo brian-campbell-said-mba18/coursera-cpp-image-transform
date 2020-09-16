@@ -84,10 +84,26 @@ PNG createSpotlight(PNG image, int centerX, int centerY) {
  * @return The illinify'd image.
 **/
 PNG illinify(PNG image) {
+  /// This function is already written for you so you can see how to
+  /// interact with our PNG class.
+  for (unsigned x = 0; x < image.width(); x++) {
+    for (unsigned y = 0; y < image.height(); y++) {
+      HSLAPixel & pixel = image.getPixel(x, y);
+
+      // `pixel` is a reference to the memory stored inside of the PNG `image`,
+      // which means you're changing the image directly. No need to `set`
+      // the pixel since you're directly changing the memory of the image.
+      if pixel.h > ((11+216)/2){
+        pixel.h = 216;
+      }
+      else{
+        pixel.h = 11;
+      }
+    }
+  }
 
   return image;
 }
- 
 
 /**
 * Returns an immge that has been watermarked by another image.
