@@ -90,6 +90,11 @@ PNG createSpotlight(PNG image, int centerX, int centerY) {
       // This calculates the percentage decrease to be applied to the spotlight for the pixel.
       double percentage_decrease = (distance_from_center/2) / 100;
 
+      /*
+      This conditional decreases the luminance, the l, of the pixel by 80% if the percentage_decrease
+      variable is greater than or equal to 0.8. Otherwise, the l of the pixel is decreased by
+      multiplying l by (1 - percentage_decrease).
+      */
       if (percentage_decrease >= 0.8){
         pixel.l *= 0.2;
       }
