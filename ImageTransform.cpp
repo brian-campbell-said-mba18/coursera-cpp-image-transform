@@ -153,6 +153,25 @@ PNG illinify(PNG image) {
 * @return The watermarked image.
 */
 PNG watermark(PNG firstImage, PNG secondImage) {
+  /// This function is already written for you so you can see how to
+  /// interact with our PNG class.
+  for (unsigned x = 0; x < secondImage.width(); x++) {
+    for (unsigned y = 0; y < secondImage.height(); y++) {
+      HSLAPixel & pixel_2 = secondImage.getPixel(x, y);
+      HSLAPixel & pixel_1 = firstImage.getPixel(x, y);
 
+      // `pixel` is a reference to the memory stored inside of the PNG `image`,
+      // which means you're changing the image directly. No need to `set`
+      // the pixel since you're directly changing the memory of the image.
+      if (pixel_2.l >= 1){
+        if ((pixel_1.l + 0.2) <= 1){
+          pixel_1.l += 0.2;
+        }
+        else{
+          pixel_1.l = 1.0;
+        }
+      }
+    }
+  }
   return firstImage;
 }
